@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.build.json",
+
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": "./lib"
+  },
+
+  "include": [
+    "src/**/*.ts"
+  ],
+
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+  ]
+}

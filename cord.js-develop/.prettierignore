@@ -1,0 +1,9 @@
+jsonabc.js
+jsonabc.d.ts
+dist
+lib
+*.json
+!package.json
+jest.*
+coverage
+**/augment-api/src/interfaces/**/*.ts

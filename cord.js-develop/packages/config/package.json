@@ -1,0 +1,42 @@
+{
+  "name": "@cord.network/config",
+  "version": "0.9.3-1rc4",
+  "description": "",
+  "type": "commonjs",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "clean": "rimraf ./lib",
+    "build": "yarn clean && yarn build:ts",
+    "build:ts": "yarn build:cjs && yarn build:esm",
+    "build:cjs": "tsc --declaration -p tsconfig.build.json",
+    "build:esm": "tsc --declaration -p tsconfig.esm.json && yarn exec cp -f ./lib/esm/index.js ./lib/index.mjs && rimraf ./lib/esm"
+  },
+  "repository": "github:dhiway/cord.js",
+  "engines": {
+    "node": ">=20.0"
+  },
+  "author": "",
+  "bugs": "https://github.com/dhiway/cord.js/issues",
+  "homepage": "https://github.com/dhiway/cord.js#readme",
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@cord.network/type-definitions": "workspace:*",
+    "@cord.network/types": "workspace:*",
+    "@cord.network/utils": "workspace:*"
+  }
+}

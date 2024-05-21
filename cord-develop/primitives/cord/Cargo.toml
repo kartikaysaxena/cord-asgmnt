@@ -1,0 +1,20 @@
+[package]
+name = 'cord-primitives'
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+sp-core = { git = "https://github.com/dhiway/substrate-sdk", default-features = false, branch = "release-v1.10.0" }
+sp-runtime = { git = "https://github.com/dhiway/substrate-sdk", default-features = false, branch = "release-v1.10.0" }
+sp-std = { git = "https://github.com/dhiway/substrate-sdk", default-features = false, branch = "release-v1.10.0" }
+
+[features]
+default = ["std"]
+std = ["sp-core/std", "sp-runtime/std", "sp-std/std"]

@@ -1,0 +1,50 @@
+{
+  "name": "@cord.network/did",
+  "version": "0.9.3-1rc4",
+  "description": "",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
+    }
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "clean": "rimraf ./lib",
+    "build": "yarn clean && yarn build:ts",
+    "build:ts": "yarn build:cjs && yarn build:esm",
+    "build:cjs": "tsc --declaration -p tsconfig.build.json && echo '{\"type\":\"commonjs\"}' > ./lib/cjs/package.json",
+    "build:esm": "tsc --declaration -p tsconfig.esm.json && echo '{\"type\":\"module\"}' > ./lib/esm/package.json"
+  },
+  "repository": "github:dhiway/cord.js",
+  "engines": {
+    "node": ">=20.0"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": "https://github.com/dhiway/cord.js/issues",
+  "homepage": "https://github.com/dhiway/cord.js#readme",
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@cord.network/augment-api": "workspace:*",
+    "@cord.network/config": "workspace:*",
+    "@cord.network/network": "workspace:*",
+    "@cord.network/types": "workspace:*",
+    "@cord.network/utils": "workspace:*",
+    "@digitalbazaar/security-context": "^1.0.1",
+    "@polkadot/api": "^10.12.2",
+    "@polkadot/keyring": "^12.6.2",
+    "@polkadot/types": "^10.12.2",
+    "@polkadot/types-codec": "^10.12.2",
+    "@polkadot/util": "^12.6.2",
+    "@polkadot/util-crypto": "^12.6.2"
+  }
+}

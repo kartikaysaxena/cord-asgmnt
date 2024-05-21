@@ -1,0 +1,52 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": [
+      "DOM"
+    ]
+  },
+  "include": [
+    "packages/**/*",
+    "jest-setup/*"
+  ],
+  "typedocOptions": {
+    "entryPointStrategy": "resolve",
+    "entryPoints": [
+      "packages/types/src/index.ts",
+      "packages/utils/src/index.ts",
+      "packages/config/src/index.ts",
+      "packages/network/src/index.ts",
+      "packages/did/src/index.ts",
+      "packages/statement/src/index.ts",
+      "packages/identifier/src/index.ts",
+      "packages/chain-space/src/index.ts",
+      "packages/schema/src/index.ts",
+      "packages/network-score/src/index.ts",
+      "packages/asset/src/index.ts",
+      "packages/sdk/src/index.ts"
+    ],
+    "out": "docs",
+    "theme": "default",
+    "exclude": [
+      "**/*spec.ts",
+      "**/__mocks__/**",
+      "**/testingTools/**",
+      "**/*.js",
+      "**/node_modules/**",
+      "**/__integrationtests__/**"
+    ],
+    "excludeExternals": true,
+    "excludePrivate": true,
+    "hideGenerator": true,
+    "excludeInternal": true,
+    "categorizeByGroup": true,
+    "excludeNotDocumented": true,
+    "includeVersion": true,
+    "name": "SDK Documentation",
+    "readme": "README.md",
+    "navigation": {
+      "includeCategories": true,
+      "includeGroups": true,
+    },
+  }
+}
